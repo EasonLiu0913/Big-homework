@@ -3,7 +3,11 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機： 127.0.0.1
+<<<<<<< HEAD
 -- 產生時間： 2021-05-17 11:28:14
+=======
+-- 產生時間： 2021-05-11 12:58:04
+>>>>>>> e8b88b068eb525975af791ab29e6f0bf0afa431d
 -- 伺服器版本： 10.4.18-MariaDB
 -- PHP 版本： 7.3.27
 
@@ -24,6 +28,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+<<<<<<< HEAD
 -- 資料表結構 `address_book`
 --
 
@@ -155,6 +160,12 @@ INSERT INTO `from_csv_01` (`name`, `age`, `address`) VALUES
 --
 
 CREATE TABLE `f_test` (
+=======
+-- 資料表結構 `testtext`
+--
+
+CREATE TABLE `testtext` (
+>>>>>>> e8b88b068eb525975af791ab29e6f0bf0afa431d
   `sid` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
@@ -163,6 +174,7 @@ CREATE TABLE `f_test` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
+<<<<<<< HEAD
 -- 傾印資料表的資料 `f_test`
 --
 
@@ -331,12 +343,21 @@ INSERT INTO `product_color` (`sid`, `product_sid`, `color`, `size`, `p_no`, `img
 (2, 2, '藍色', 15, '', ''),
 (3, 2, '紅色', 20, 'bbb_red_20_002', ''),
 (4, 2, '藍色', 30, '', '');
+=======
+-- 傾印資料表的資料 `testtext`
+--
+
+INSERT INTO `testtext` (`sid`, `name`, `email`, `mobile`, `address`) VALUES
+(1, '安安安', 'deee12@gmail.com', '0987987987', '台北市'),
+(2, '你妳你', 'dezaa1215@gamil.com', '0987789987', NULL);
+>>>>>>> e8b88b068eb525975af791ab29e6f0bf0afa431d
 
 --
 -- 已傾印資料表的索引
 --
 
 --
+<<<<<<< HEAD
 -- 資料表索引 `address_book`
 --
 ALTER TABLE `address_book`
@@ -399,10 +420,19 @@ ALTER TABLE `product_color`
   ADD KEY `product_sid` (`product_sid`);
 
 --
+=======
+-- 資料表索引 `testtext`
+--
+ALTER TABLE `testtext`
+  ADD PRIMARY KEY (`sid`);
+
+--
+>>>>>>> e8b88b068eb525975af791ab29e6f0bf0afa431d
 -- 在傾印的資料表使用自動遞增(AUTO_INCREMENT)
 --
 
 --
+<<<<<<< HEAD
 -- 使用資料表自動遞增(AUTO_INCREMENT) `address_book`
 --
 ALTER TABLE `address_book`
@@ -455,6 +485,12 @@ ALTER TABLE `products`
 --
 ALTER TABLE `product_color`
   MODIFY `sid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+=======
+-- 使用資料表自動遞增(AUTO_INCREMENT) `testtext`
+--
+ALTER TABLE `testtext`
+  MODIFY `sid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+>>>>>>> e8b88b068eb525975af791ab29e6f0bf0afa431d
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
