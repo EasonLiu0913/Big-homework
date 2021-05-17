@@ -10,9 +10,6 @@ $rows = $pdo->query($sql)->fetchAll();
 $stmt->execute();
 $f_test = $stmt->fetch(PDO::FETCH_ASSOC);
 
-
-
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -1020,7 +1017,7 @@ $f_test = $stmt->fetch(PDO::FETCH_ASSOC);
 
                                             <option value="">同親友資料</option>
                                             <?php foreach ($rows as $p) : ?>
-                                                <option value="<?= $p['name_'] ?>"><?= $p['name_'] ?></option>
+                                                <option value="<?= $p['sid'] ?>" data-sid="<?= $p['sid'] ?>" data-address="<?= $p['address_'] ?>" data-mobile="<?= $p['mobile_'] ?>" data-year="<?= $p['year'] ?>" data-month="<?= $p['month'] ?>"  data-day="<?= $p['day'] ?>"><?= $p['name'] ?></option>
 
                                             <?php endforeach; ?>
                                         </select>
@@ -1511,22 +1508,24 @@ $f_test = $stmt->fetch(PDO::FETCH_ASSOC);
 
 
         // 親友資料匯入
-
+        
         $(document).on('change', "#exampleInputfriend", (function() {
-            console.log('change')
-
-         
-                $(this).parents('.light_Fill_in_theinformation_text_star').next().next().find('.exampleInputName').val("<?= $f_test['sid'] ?>");
-                $(this).parents('.light_Fill_in_theinformation_text_star').next().next().find('.exampleInputaddress').val("<?= $f_test['address_'] ?>");
-                $(this).parents('.light_Fill_in_theinformation_text_star').next().next().find('.exampleInputPhoneNumber').val("<?= $f_test['mobile_'] ?>");
-
-                $(this).parents('.light_Fill_in_theinformation_text_star').next().next().find('.exampleInputYear').val("<?= $f_test['year'] ?>");
-
-                $(this).parents('.light_Fill_in_theinformation_text_star').next().next().find('.exampleInputMonth').val("<?= $f_test['month'] ?>");
-
-                $(this).parents('.light_Fill_in_theinformation_text_star').next().next().find('.exampleInputDay').val("<?= $f_test['day'] ?>");
-
-           
+            // console.log('change',$(this),val())
+            const sid = $(this).val();
+            $.post(
+                'light_Fil_test_api.php',
+                {sid},
+                function(data){
+                    // console.log('data',data);
+                    $('.exampleInputName').val(data.name);
+                    $('.exampleInputaddress').val(data.address_)
+                    $('.exampleInputPhoneNumber').val(data.mobile_)
+                    $('.exampleInputYear').val(data.year)                    
+                    $('.exampleInputMonth').val(data.month)
+                    $('.exampleInputDay').val(data.day)
+                },
+                'json'
+            )
         }))
 
 
