@@ -1,7 +1,21 @@
+<?php include __DIR__ . '/parts/config.php'; ?>
+
+<?
+// $sql = "SELECT * FROM testtext WHERE id = '" . $_GET['id'] . "'";
+// $stmt = $pdo->perpare($sql);
+// $stmt->execute();
+// $testtext = $stmt->fetch(PDO::FETCH_NUM);
+$sql = "SELECT * FROM testtext WHERE id = '" . $_GET['id'] . "'";
+$stmt = $pdo->query($sql)->fetch(PDO::FETCH_NUM)[0];
+
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,19 +23,15 @@
     <!-- 重置 -->
     <link rel="stylesheet" href="./css/reset.css">
     <!-- bootstrap 4.6.0 -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
-        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
     <!-- 動畫 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <!-- 小圖示 -->
     <script src="https://kit.fontawesome.com/271f30e909.js" crossorigin="anonymous"></script>
     <!-- 文字 -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Faustina:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap"
-        rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Faustina:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/sample_body.css">
 
     <!-- navbar2 -->
@@ -293,12 +303,9 @@
         <div class="nav_burgurBar_img">
             <svg xmlns="http://www.w3.org/2000/svg" width="25" height="20" viewBox="0 0 25 20">
                 <g id="Group_135" data-name="Group 135" transform="translate(-341.5 -1313.5)">
-                    <line id="Line_50" data-name="Line 50" x2="23" transform="translate(342.5 1314.5)" fill="none"
-                        stroke="#707070" stroke-linecap="round" stroke-width="2" />
-                    <line id="Line_51" data-name="Line 51" x2="23" transform="translate(342.5 1323.5)" fill="none"
-                        stroke="#707070" stroke-linecap="round" stroke-width="2" />
-                    <line id="Line_52" data-name="Line 52" x2="23" transform="translate(342.5 1332.5)" fill="none"
-                        stroke="#707070" stroke-linecap="round" stroke-width="2" />
+                    <line id="Line_50" data-name="Line 50" x2="23" transform="translate(342.5 1314.5)" fill="none" stroke="#707070" stroke-linecap="round" stroke-width="2" />
+                    <line id="Line_51" data-name="Line 51" x2="23" transform="translate(342.5 1323.5)" fill="none" stroke="#707070" stroke-linecap="round" stroke-width="2" />
+                    <line id="Line_52" data-name="Line 52" x2="23" transform="translate(342.5 1332.5)" fill="none" stroke="#707070" stroke-linecap="round" stroke-width="2" />
                 </g>
             </svg>
         </div>
@@ -313,8 +320,7 @@
         <div class="nav_closeBtn mb-4">
             <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 20 20">
                 <title>close</title>
-                <path fill='#fff'
-                    d="M10 8.586l-7.071-7.071-1.414 1.414 7.071 7.071-7.071 7.071 1.414 1.414 7.071-7.071 7.071 7.071 1.414-1.414-7.071-7.071 7.071-7.071-1.414-1.414-7.071 7.071z">
+                <path fill='#fff' d="M10 8.586l-7.071-7.071-1.414 1.414 7.071 7.071-7.071 7.071 1.414 1.414 7.071-7.071 7.071 7.071 1.414-1.414-7.071-7.071 7.071-7.071-1.414-1.414-7.071 7.071z">
                 </path>
             </svg>
         </div>
@@ -408,8 +414,7 @@
     </nav>
 
     <!-- login -->
-    <div class="modal fade" id="loginCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-        aria-hidden="true">
+    <div class="modal fade" id="loginCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content modal-content-re">
                 <div class="modal-header modal-header-re">
@@ -421,8 +426,7 @@
                 <div class="modal-body">
                     <form class="mt-3">
                         <div class="form-group mb-3">
-                            <input type="text" class="form-control form-control-re" id="account-name"
-                                placeholder="Email">
+                            <input type="text" class="form-control form-control-re" id="account-name" placeholder="Email">
                         </div>
                         <div class="form-group">
                             <input class="form-control form-control-re" id="password-text" placeholder="Password">
@@ -442,8 +446,7 @@
     </div>
 
     <!-- lost password -->
-    <div class="modal fade" id="lostPassword" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-        aria-hidden="true">
+    <div class="modal fade" id="lostPassword" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content modal-content-re">
                 <div class="modal-header modal-header-re">
@@ -456,8 +459,7 @@
                     <form class="mt-3">
                         <div class="form-group mb-3">
                             <p>請輸入您註冊的電子郵件，您將會在電子郵件信箱中收到重設密碼的連結。</p>
-                            <input type="text" class="form-control form-control-re" id="account-name"
-                                placeholder="Email">
+                            <input type="text" class="form-control form-control-re" id="account-name" placeholder="Email">
                         </div>
                     </form>
                 </div>
@@ -469,8 +471,7 @@
     </div>
 
     <!-- register -->
-    <div class="modal fade" id="registerCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-        aria-hidden="true">
+    <div class="modal fade" id="registerCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content modal-content-re">
                 <div class="modal-header modal-header-re">
@@ -482,19 +483,16 @@
                 <div class="modal-body">
                     <form class="mt-3">
                         <div class="form-group mb-3">
-                            <input type="text" class="form-control form-control-re" id="account-name"
-                                placeholder="User Name">
+                            <input type="text" class="form-control form-control-re" id="account-name" placeholder="User Name">
                         </div>
                         <div class="form-group mb-3">
-                            <input type="text" class="form-control form-control-re" id="account-name"
-                                placeholder="Email">
+                            <input type="text" class="form-control form-control-re" id="account-name" placeholder="Email">
                         </div>
                         <div class="form-group">
                             <input class="form-control form-control-re" id="password-text" placeholder="Password">
                         </div>
                         <div class="form-group">
-                            <input class="form-control form-control-re" id="password-text"
-                                placeholder="Repeat Password">
+                            <input class="form-control form-control-re" id="password-text" placeholder="Repeat Password">
                         </div>
                     </form>
                 </div>
@@ -519,6 +517,7 @@
             <a href="./light_Fill_in_theinformation.html" class="astlyep">點燈填寫</a>
         </div>
     </div>
+
 
     <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
     <div class="light_Fill_in_theinformation_ padtop100">
@@ -650,8 +649,8 @@
                         </div>
                         <!--   小提示 同會員資料 -->
                         <div class="light_Fill_in_theinformation_text_star_right    alignitems d-flex">
-                            <input type="checkbox" id="exampleCheck1">
-                            <label class="form-check-label padleft10" for="exampleCheck2">
+                            <input type="checkbox" id="exampleCheck1" class="form-check-input">
+                            <label class="form-check-label padleft10" for="exampleCheck1" type="submit">
                                 <p>同會員資料</p>
                             </label>
                         </div>
@@ -663,57 +662,51 @@
                     </div>
 
                     <!--  申請人_input集合-->
-                    <div class="light_Fill_in_theinformation_inputset borderbottom ">
-                        <!--  _申請人input_1 姓名-->
-                        <div
-                            class="light_Fill_in_theinformation_input_1 d-flex alignitems col-lg-8 marginauto paddingbottom40">
-                            <!-- *姓名 -->
-                            <div class="light_Fill_in_theinformation_input_text col d-flex">
-                                <p class="redcolorh5">*</p>
-                                <p>姓名</p>
-                            </div>
-                            <!-- boostarp input -->
-                            <input type="text" class="form-control col-8 radius0" placeholder="請輸入姓名" aria-label="請輸入姓名"
-                                aria-describedby="addon-wrapping">
+                    <form method="get">
+                        <div class="light_Fill_in_theinformation_inputset borderbottom ">
+                            <!--  _申請人input_1 姓名-->
+                            <div class="light_Fill_in_theinformation_input_1 d-flex alignitems col-lg-8 marginauto paddingbottom40">
+                                <!-- *姓名 -->
+                                <div class="light_Fill_in_theinformation_input_text col d-flex">
+                                    <p class="redcolorh5">*</p>
+                                    <p>姓名</p>
+                                </div>
+                                <!-- boostarp input -->
+                                <input type="text" class="form-control col-8 radius0" placeholder="請輸入姓名" aria-label="請輸入姓名" aria-describedby="addon-wrapping">
 
-                        </div>
-                        <!--  _申請人input_1 連絡電話-->
-                        <div
-                            class="light_Fill_in_theinformation_input_1 d-flex alignitems col-lg-8 marginauto paddingbottom40">
-                            <!-- *連絡電話 -->
-                            <div class="light_Fill_in_theinformation_input_text col d-flex">
-                                <p class="redcolorh5">*</p>
-                                <p>連絡電話</p>
                             </div>
-                            <!-- boostarp input -->
-                            <input type="text" class="form-control col-8 radius0" placeholder="請輸入連絡電話"
-                                aria-label="請輸入連絡電話" aria-describedby="addon-wrapping">
-                        </div>
-                        <!--  _申請人input_1 地址-->
-                        <div
-                            class="light_Fill_in_theinformation_input_1 d-flex alignitems col-lg-8 marginauto paddingbottom40">
-                            <!-- *地址 -->
-                            <div class="light_Fill_in_theinformation_input_text col d-flex">
-                                <p class="redcolorh5">*</p>
-                                <p>地址</p>
+                            <!--  _申請人input_1 連絡電話-->
+                            <div class="light_Fill_in_theinformation_input_1 d-flex alignitems col-lg-8 marginauto paddingbottom40">
+                                <!-- *連絡電話 -->
+                                <div class="light_Fill_in_theinformation_input_text col d-flex">
+                                    <p class="redcolorh5">*</p>
+                                    <p>連絡電話</p>
+                                </div>
+                                <!-- boostarp input -->
+                                <input type="text" class="form-control col-8 radius0" placeholder="請輸入連絡電話" aria-label="請輸入連絡電話" aria-describedby="addon-wrapping">
                             </div>
-                            <!-- boostarp input -->
-                            <input type="text" class="form-control col-8 radius0" placeholder="請輸入地址" aria-label="請輸入地址"
-                                aria-describedby="addon-wrapping">
-                        </div>
-                        <!--  _申請人input_1 E-mail-->
-                        <div
-                            class="light_Fill_in_theinformation_input_1 d-flex alignitems col-lg-8 marginauto paddingbottom30">
-                            <!-- *E-mail -->
-                            <div class="light_Fill_in_theinformation_input_text col d-flex">
-                                <p class="redcolorh5">*</p>
-                                <p>E-mail</p>
+                            <!--  _申請人input_1 地址-->
+                            <div class="light_Fill_in_theinformation_input_1 d-flex alignitems col-lg-8 marginauto paddingbottom40">
+                                <!-- *地址 -->
+                                <div class="light_Fill_in_theinformation_input_text col d-flex">
+                                    <p class="redcolorh5">*</p>
+                                    <p>地址</p>
+                                </div>
+                                <!-- boostarp input -->
+                                <input type="text" class="form-control col-8 radius0" placeholder="請輸入地址" aria-label="請輸入地址" aria-describedby="addon-wrapping">
                             </div>
-                            <!-- boostarp input -->
-                            <input type="text" class="form-control col-8 radius0" placeholder="請輸入E-mail"
-                                aria-label="請輸入E-mail" aria-describedby="addon-wrapping">
+                            <!--  _申請人input_1 E-mail-->
+                            <div class="light_Fill_in_theinformation_input_1 d-flex alignitems col-lg-8 marginauto paddingbottom30">
+                                <!-- *E-mail -->
+                                <div class="light_Fill_in_theinformation_input_text col d-flex">
+                                    <p class="redcolorh5">*</p>
+                                    <p>E-mail</p>
+                                </div>
+                                <!-- boostarp input -->
+                                <input type="text" class="form-control col-8 radius0" placeholder="請輸入E-mail" aria-label="請輸入E-mail" aria-describedby="addon-wrapping">
+                            </div>
                         </div>
-                    </div>
+                    </form>
                 </div>
 
                 <!--  手機用 申請人資料卡(付款人)區塊 -->
@@ -729,7 +722,7 @@
                         <!--  手機用 申請人小提示 同會員資料 -->
                         <div class="light_Fill_in_theinformation_text_star_right    alignitems d-flex">
                             <input type="checkbox" id="exampleCheck1" class="radius0">
-                            <label class="form-check-label padleft10" for="exampleCheck2">
+                            <label class="form-check-label padleft10" for="exampleCheck1">
                                 <p>同會員資料</p>
                             </label>
                         </div>
@@ -743,53 +736,45 @@
                     <!--  手機用_申請人input集合-->
                     <div class="light_Fill_in_theinformation_inputset borderbottom ">
                         <!--  手機用_申請人input_1 姓名-->
-                        <div
-                            class="light_Fill_in_theinformation_input_1 d-flex alignitems col-lg-8 marginauto paddingbottom40">
+                        <div class="light_Fill_in_theinformation_input_1 d-flex alignitems col-lg-8 marginauto paddingbottom40">
                             <!-- 手機用*姓名 -->
                             <div class="light_Fill_in_theinformation_input_text col d-flex">
                                 <p class="redcolorh5">*</p>
                                 <p>姓名</p>
                             </div>
                             <!--手機用 boostarp input -->
-                            <input type="text" class="form-control col-7 radius0" placeholder="請輸入姓名" aria-label="請輸入姓名"
-                                aria-describedby="addon-wrapping">
+                            <input type="text" class="form-control col-7 radius0" placeholder="請輸入姓名" aria-label="請輸入姓名" aria-describedby="addon-wrapping">
 
                         </div>
                         <!--  手機用_申請人input_1 連絡電話-->
-                        <div
-                            class="light_Fill_in_theinformation_input_1 d-flex alignitems col-lg-8 marginauto paddingbottom40">
+                        <div class="light_Fill_in_theinformation_input_1 d-flex alignitems col-lg-8 marginauto paddingbottom40">
                             <!-- 手機用*連絡電話 -->
                             <div class="light_Fill_in_theinformation_input_text col d-flex">
                                 <p class="redcolorh5">*</p>
                                 <p>連絡電話</p>
                             </div>
                             <!-- boostarp input -->
-                            <input type="text" class="form-control col-7 radius0" placeholder="請輸入連絡電話"
-                                aria-label="請輸入連絡電話" aria-describedby="addon-wrapping">
+                            <input type="text" class="form-control col-7 radius0" placeholder="請輸入連絡電話" aria-label="請輸入連絡電話" aria-describedby="addon-wrapping">
                         </div>
                         <!--  手機用_申請人input_1 地址-->
-                        <div
-                            class="light_Fill_in_theinformation_input_1 d-flex alignitems col-lg-8 marginauto paddingbottom40">
+                        <div class="light_Fill_in_theinformation_input_1 d-flex alignitems col-lg-8 marginauto paddingbottom40">
                             <!-- *地址 -->
                             <div class="light_Fill_in_theinformation_input_text col d-flex">
                                 <p class="redcolorh5">*</p>
                                 <p>地址</p>
                             </div>
                             <!--手機用  boostarp input -->
-                            <input type="text" class="form-control col-7 radius0" placeholder="請輸入地址" aria-label="請輸入地址"
-                                aria-describedby="addon-wrapping">
+                            <input type="text" class="form-control col-7 radius0" placeholder="請輸入地址" aria-label="請輸入地址" aria-describedby="addon-wrapping">
                         </div>
                         <!--  手機用_申請人input_1 E-mail-->
-                        <div
-                            class="light_Fill_in_theinformation_input_1 d-flex alignitems col-lg-8 marginauto paddingbottom30">
+                        <div class="light_Fill_in_theinformation_input_1 d-flex alignitems col-lg-8 marginauto paddingbottom30">
                             <!-- 手機用*E-mail -->
                             <div class="light_Fill_in_theinformation_input_text col d-flex">
                                 <p class="redcolorh5">*</p>
                                 <p>E-mail</p>
                             </div>
                             <!-- 手機用 boostarp input -->
-                            <input type="text" class="form-control col-7 radius0" placeholder="請輸入E-mail"
-                                aria-label="請輸入E-mail" aria-describedby="addon-wrapping">
+                            <input type="text" class="form-control col-7 radius0" placeholder="請輸入E-mail" aria-label="請輸入E-mail" aria-describedby="addon-wrapping">
                         </div>
                     </div>
                 </div>
@@ -809,7 +794,7 @@
                         <!--  預設祈福者  小提示 同會員資料 -->
                         <div class="light_Fill_in_theinformation_text_star_right    alignitems d-flex">
                             <input type="checkbox" id="exampleCheck1" class="radius0">
-                            <label class="form-check-label padleft10" for="exampleCheck2">
+                            <label class="form-check-label padleft10" for="exampleCheck1">
                                 <p>同會員資料</p>
                             </label>
                         </div>
@@ -829,21 +814,18 @@
                     <!--  預設祈福者 input集合 桌機用-->
                     <div class="light_Fill_in_theinformation_inputset borderbottom displayno_md">
                         <!--  input_1_姓名-->
-                        <div
-                            class="light_Fill_in_theinformation_input_1 d-flex alignitems col-lg-8 marginauto paddingbottom40">
+                        <div class="light_Fill_in_theinformation_input_1 d-flex alignitems col-lg-8 marginauto paddingbottom40">
                             <!-- *姓名 -->
                             <div class="light_Fill_in_theinformation_input_text col d-flex">
                                 <p class="redcolorh5">*</p>
                                 <p>姓名</p>
                             </div>
                             <!-- boostarp input -->
-                            <input type="text" class="form-control col-8 radius0" placeholder="請輸入姓名" aria-label="請輸入姓名"
-                                aria-describedby="addon-wrapping">
+                            <input type="text" class="form-control col-8 radius0" placeholder="請輸入姓名" aria-label="請輸入姓名" aria-describedby="addon-wrapping">
                         </div>
 
                         <!--  預設祈福者input_1_生日-->
-                        <div
-                            class="light_Fill_in_theinformation_input_1 d-flex alignitems col-lg-8 marginauto paddingbottom40">
+                        <div class="light_Fill_in_theinformation_input_1 d-flex alignitems col-lg-8 marginauto paddingbottom40">
                             <!--預設祈福者 *出生日期 -->
                             <div class="light_Fill_in_theinformation_input_text col-4 padright0 d-flex alignitems">
                                 <p class="redcolorh5">*</p>
@@ -883,8 +865,7 @@
 
 
                         <!--  預設祈福者input_1_時辰-->
-                        <div
-                            class="light_Fill_in_theinformation_input_1 d-flex alignitems col-lg-8 marginauto paddingbottom40">
+                        <div class="light_Fill_in_theinformation_input_1 d-flex alignitems col-lg-8 marginauto paddingbottom40">
                             <!-- 預設祈福者*時辰 -->
                             <div class="light_Fill_in_theinformation_input_text col-4 padright0 d-flex alignitems">
                                 <p class="redcolorh5 opac">*</p>
@@ -903,8 +884,7 @@
 
 
                         <!--  預設祈福者input_1_性別-->
-                        <div
-                            class="light_Fill_in_theinformation_input_1 d-flex alignitems col-lg-8 marginauto paddingbottom40">
+                        <div class="light_Fill_in_theinformation_input_1 d-flex alignitems col-lg-8 marginauto paddingbottom40">
                             <!-- 預設祈福者*性別 -->
                             <div class="light_Fill_in_theinformation_input_text col-4 d-flex">
                                 <p class="redcolorh5">*</p>
@@ -913,15 +893,13 @@
                             <!--預設祈福者 boostarp check 改造-->
                             <div class="light_Fill_in_theinformation_check d-flex">
                                 <div class="check d-flex alignitems padright40">
-                                    <input class="check_input radius0" type="radio" name="exampleRadios"
-                                        id="exampleRadios1" value="option1" checked>
+                                    <input class="check_input radius0" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
                                     <p class="form-check-label" for="exampleRadios1">
                                         男
                                     </p>
                                 </div>
                                 <div class="check d-flex alignitems">
-                                    <input class="check_input radius0" type="radio" name="exampleRadios"
-                                        id="exampleRadios2" value="option2">
+                                    <input class="check_input radius0" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
                                     <p class="form-check-label" for="exampleRadios2">
                                         女
                                     </p>
@@ -933,51 +911,43 @@
 
 
                         <!-- 預設祈福者input_1_電話-->
-                        <div
-                            class="light_Fill_in_theinformation_input_1 d-flex alignitems col-lg-8 marginauto paddingbottom40">
+                        <div class="light_Fill_in_theinformation_input_1 d-flex alignitems col-lg-8 marginauto paddingbottom40">
                             <!--預設祈福者 *連絡電話 -->
                             <div class="light_Fill_in_theinformation_input_text col d-flex">
                                 <p class="redcolorh5 opac">*</p>
                                 <p>連絡電話</p>
                             </div>
                             <!--預設祈福者 boostarp input -->
-                            <input type="text" class="form-control col-8 radius0" placeholder="請輸入連絡電話"
-                                aria-label="請輸入連絡電話" aria-describedby="addon-wrapping">
+                            <input type="text" class="form-control col-8 radius0" placeholder="請輸入連絡電話" aria-label="請輸入連絡電話" aria-describedby="addon-wrapping">
                         </div>
 
                         <!--  預設祈福者input_1_地址-->
-                        <div
-                            class="light_Fill_in_theinformation_input_1 d-flex alignitems col-lg-8 marginauto paddingbottom40">
+                        <div class="light_Fill_in_theinformation_input_1 d-flex alignitems col-lg-8 marginauto paddingbottom40">
                             <!--預設祈福者 *地址 -->
                             <div class="light_Fill_in_theinformation_input_text col d-flex">
                                 <p class="redcolorh5">*</p>
                                 <p>地址</p>
                             </div>
                             <!-- 預設祈福者boostarp input -->
-                            <input type="text" class="form-control col-8 radius0" placeholder="請輸入地址" aria-label="請輸入地址"
-                                aria-describedby="addon-wrapping">
+                            <input type="text" class="form-control col-8 radius0" placeholder="請輸入地址" aria-label="請輸入地址" aria-describedby="addon-wrapping">
                         </div>
 
                         <!--預設祈福者 改 -->
                         <div class="light_add_set lightadd_this" id="lightadd_this">
 
                             <!-- 三層篩選 救救我QQ~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-                            <div class="light_Fill_in_theinformation_input_set d-flex col-8 paddingbottom40 marginauto chained-selects"
-                                data-selector="myselector">
+                            <div class="light_Fill_in_theinformation_input_set d-flex col-8 paddingbottom40 marginauto chained-selects" data-selector="myselector">
                                 <!--  input_1_選擇燈種 -->
-                                <div
-                                    class="light_Fill_in_theinformation_input_1 d-flex alignitems col-7 marginauto p-0 ">
+                                <div class="light_Fill_in_theinformation_input_1 d-flex alignitems col-7 marginauto p-0 ">
                                     <!-- *燈種 -->
-                                    <div
-                                        class="light_Fill_in_theinformation_input_text col-7 padright0 d-flex alignitems">
+                                    <div class="light_Fill_in_theinformation_input_text col-7 padright0 d-flex alignitems">
                                         <p class="redcolorh5">*</p>
                                         <p>選擇燈種</p>
                                     </div>
                                     <!-- boostarp 下拉選單 -->
                                     <div class="col-4 d-flex alignitems p-0">
                                         <div class="col p-0">
-                                            <select name="light_type" class="form-control col-11 radius0 lightarray"
-                                                id="select-1">
+                                            <select name="light_type" class="form-control col-11 radius0 lightarray" id="select-1">
                                                 <option selected>選擇燈種</option>
                                                 <option>光明燈</option>
                                                 <option>文昌燈</option>
@@ -991,27 +961,23 @@
                                 </div>
 
                                 <!-- 預設祈福者input_1_ 選擇廟宇-->
-                                <div
-                                    class="light_Fill_in_theinformation_input_1 d-flex alignitems col-lg-8 marginauto p-0 flex-wrap">
+                                <div class="light_Fill_in_theinformation_input_1 d-flex alignitems col-lg-8 marginauto p-0 flex-wrap">
                                     <!-- 預設祈福者 *廟宇 -->
-                                    <div
-                                        class="light_Fill_in_theinformation_input_text col-4 padright0 d-flex alignitems">
+                                    <div class="light_Fill_in_theinformation_input_text col-4 padright0 d-flex alignitems">
                                         <p class="redcolorh5">*</p>
                                         <p>選擇廟宇</p>
                                     </div>
                                     <!--預設祈福者 boostarp 下拉選單 -->
                                     <div class="col-3 d-flex alignitems p-0">
                                         <div class="col p-0">
-                                            <select name="light_area" class="form-control col-11 radius0 areaarray"
-                                                id="select-2" disabled>
+                                            <select name="light_area" class="form-control col-11 radius0 areaarray" id="select-2" disabled>
                                                 <option selected>選擇地區</option>
                                             </select>
                                         </div>
                                     </div>
                                     <div class="col-5 d-flex alignitems p-0">
                                         <div class="col p-0">
-                                            <select name="light_temple" class="form-control col-11 radius0"
-                                                id="select-3" disabled>
+                                            <select name="light_temple" class="form-control col-11 radius0" id="select-3" disabled>
                                                 <option selected>選擇廟宇</option>
                                             </select>
                                         </div>
@@ -1042,21 +1008,18 @@
                     <!--  手機用 預設祈福者 input集合 -->
                     <div class="light_Fill_in_theinformation_inputset borderbottom  displayno">
                         <!--  手機用 預設祈福者 input_1_姓名-->
-                        <div
-                            class="light_Fill_in_theinformation_input_1 d-flex alignitems col-lg-8 marginauto paddingbottom40">
+                        <div class="light_Fill_in_theinformation_input_1 d-flex alignitems col-lg-8 marginauto paddingbottom40">
                             <!--手機用 *姓名 -->
                             <div class="light_Fill_in_theinformation_input_text col d-flex">
                                 <p class="redcolorh5">*</p>
                                 <p>姓名</p>
                             </div>
                             <!--手機用 boostarp input -->
-                            <input type="text" class="form-control col-7 radius0" placeholder="請輸入姓名" aria-label="請輸入姓名"
-                                aria-describedby="addon-wrapping">
+                            <input type="text" class="form-control col-7 radius0" placeholder="請輸入姓名" aria-label="請輸入姓名" aria-describedby="addon-wrapping">
                         </div>
 
                         <!--  手機用 預設祈福者 input_1_生日-->
-                        <div
-                            class="light_Fill_in_theinformation_input_1 d-flex alignitems col-lg-8 marginauto paddingbottom40">
+                        <div class="light_Fill_in_theinformation_input_1 d-flex alignitems col-lg-8 marginauto paddingbottom40">
                             <!-- 手機用*出生日期 -->
                             <div class="light_Fill_in_theinformation_input_text col  d-flex alignitems">
                                 <p class="redcolorh5">*</p>
@@ -1083,8 +1046,7 @@
 
                         </div>
 
-                        <div
-                            class="light_Fill_in_theinformation_input_1 d-flex alignitems col-lg-8 marginauto paddingbottom40">
+                        <div class="light_Fill_in_theinformation_input_1 d-flex alignitems col-lg-8 marginauto paddingbottom40">
                             <!-- 手機用*出生日期 -->
                             <div class="light_Fill_in_theinformation_input_text col  d-flex alignitems visy">
                                 <p class="redcolorh5">*</p>
@@ -1113,8 +1075,7 @@
                         </div>
 
                         <!--  手機用 預設祈福者 input_1_時辰-->
-                        <div
-                            class="light_Fill_in_theinformation_input_1 d-flex alignitems col-lg-8 marginauto paddingbottom40">
+                        <div class="light_Fill_in_theinformation_input_1 d-flex alignitems col-lg-8 marginauto paddingbottom40">
                             <!--手機用 *時辰 -->
                             <div class="light_Fill_in_theinformation_input_text col  d-flex alignitems">
                                 <p class="redcolorh5 opac">*</p>
@@ -1133,8 +1094,7 @@
 
 
                         <!--  手機用 預設祈福者 input_1_性別-->
-                        <div
-                            class="light_Fill_in_theinformation_input_1 d-flex alignitems col-lg-8 marginauto paddingbottom40">
+                        <div class="light_Fill_in_theinformation_input_1 d-flex alignitems col-lg-8 marginauto paddingbottom40">
                             <!--手機用 *性別 -->
                             <div class="light_Fill_in_theinformation_input_text col-5 d-flex">
                                 <p class="redcolorh5">*</p>
@@ -1143,15 +1103,13 @@
                             <!-- 手機用 預設祈福者 boostarp check 改造-->
                             <div class="light_Fill_in_theinformation_check d-flex">
                                 <div class="check d-flex alignitems padright40">
-                                    <input class="check_input radius0" type="radio" name="exampleRadios"
-                                        id="exampleRadios1" value="option1" checked>
+                                    <input class="check_input radius0" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
                                     <p class="form-check-label" for="exampleRadios1">
                                         男
                                     </p>
                                 </div>
                                 <div class="check d-flex alignitems">
-                                    <input class="check_input radius0" type="radio" name="exampleRadios"
-                                        id="exampleRadios2" value="option2">
+                                    <input class="check_input radius0" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
                                     <p class="form-check-label" for="exampleRadios2">
                                         女
                                     </p>
@@ -1160,38 +1118,32 @@
                         </div>
 
                         <!--  手機用 預設祈福者 input_1_電話-->
-                        <div
-                            class="light_Fill_in_theinformation_input_1 d-flex alignitems col-lg-8 marginauto paddingbottom40">
+                        <div class="light_Fill_in_theinformation_input_1 d-flex alignitems col-lg-8 marginauto paddingbottom40">
                             <!-- 手機用 *連絡電話 -->
                             <div class="light_Fill_in_theinformation_input_text col d-flex">
                                 <p class="redcolorh5 opac">*</p>
                                 <p>連絡電話</p>
                             </div>
                             <!-- 手機用 預設祈福者 boostarp input -->
-                            <input type="text" class="form-control col-7 radius0" placeholder="請輸入連絡電話"
-                                aria-label="請輸入連絡電話" aria-describedby="addon-wrapping">
+                            <input type="text" class="form-control col-7 radius0" placeholder="請輸入連絡電話" aria-label="請輸入連絡電話" aria-describedby="addon-wrapping">
                         </div>
 
                         <!--  手機用 預設祈福者 input_1_地址-->
-                        <div
-                            class="light_Fill_in_theinformation_input_1 d-flex alignitems col-lg-8 marginauto paddingbottom40">
+                        <div class="light_Fill_in_theinformation_input_1 d-flex alignitems col-lg-8 marginauto paddingbottom40">
                             <!-- 手機用 *地址 -->
                             <div class="light_Fill_in_theinformation_input_text col d-flex">
                                 <p class="redcolorh5">*</p>
                                 <p>地址</p>
                             </div>
                             <!-- 手機用 預設祈福者 boostarp input -->
-                            <input type="text" class="form-control col-7 radius0" placeholder="請輸入地址" aria-label="請輸入地址"
-                                aria-describedby="addon-wrapping">
+                            <input type="text" class="form-control col-7 radius0" placeholder="請輸入地址" aria-label="請輸入地址" aria-describedby="addon-wrapping">
                         </div>
 
                         <!-- 改 手機用 燈種+廟宇套裝-->
                         <div class="light_add_set_md lightadd_this_md">
-                            <div class="light_Fill_in_theinformation_input_set  col marginauto lightcard"
-                                data-selector="myselector">
+                            <div class="light_Fill_in_theinformation_input_set  col marginauto lightcard" data-selector="myselector">
                                 <!--  手機用 預設祈福者 input_1_選擇燈種 -->
-                                <div
-                                    class="light_Fill_in_theinformation_input_1 d-flex alignitems col marginauto paddingbottom40 ">
+                                <div class="light_Fill_in_theinformation_input_1 d-flex alignitems col marginauto paddingbottom40 ">
                                     <!-- 手機用 *燈種 -->
                                     <div class="light_Fill_in_theinformation_input_text col  d-flex alignitems">
                                         <p class="redcolorh5">*</p>
@@ -1200,8 +1152,7 @@
                                     <!--手機用 預設祈福者 boostarp 下拉選單 -->
                                     <div class="col-7 d-flex alignitems p-0">
                                         <div class="col p-0">
-                                            <select name="light_type" class="form-control col-11 radius0 lightarray"
-                                                id="select-1">
+                                            <select name="light_type" class="form-control col-11 radius0 lightarray" id="select-1">
                                                 <option selected>選擇燈種</option>
                                                 <option>光明燈</option>
                                                 <option>文昌燈</option>
@@ -1216,8 +1167,7 @@
                                 </div>
 
                                 <!--  手機用 預設祈福者 input_1_ 選擇廟宇-->
-                                <div
-                                    class="light_Fill_in_theinformation_input_1 d-flex alignitems col marginauto paddingbottom40">
+                                <div class="light_Fill_in_theinformation_input_1 d-flex alignitems col marginauto paddingbottom40">
                                     <!--手機用 *廟宇_地區 -->
                                     <div class="light_Fill_in_theinformation_input_text col  d-flex alignitems">
                                         <p class="redcolorh5">*</p>
@@ -1226,16 +1176,14 @@
                                     <!-- 手機用 預設祈福者 boostarp 下拉選單 廟宇_地區 資料匯入-->
                                     <div class="col-7 d-flex alignitems p-0">
                                         <div class="col p-0">
-                                            <select name="light_area" class="form-control col-11 radius0 areaarray"
-                                                id="select-2" disabled>
+                                            <select name="light_area" class="form-control col-11 radius0 areaarray" id="select-2" disabled>
                                                 <option selected>選擇地區</option>
                                             </select>
                                         </div>
                                     </div>
                                 </div>
 
-                                <div
-                                    class="light_Fill_in_theinformation_input_1 d-flex alignitems col marginauto paddingbottom40">
+                                <div class="light_Fill_in_theinformation_input_1 d-flex alignitems col marginauto paddingbottom40">
                                     <!--手機用 *廟宇 -->
                                     <div class="light_Fill_in_theinformation_input_text col  d-flex alignitems visy">
                                         <p class="redcolorh5">*</p>
@@ -1244,8 +1192,7 @@
                                     <!-- 手機用 預設祈福者 boostarp 下拉選單 廟宇_宮廟 資料匯入-->
                                     <div class="col-7 d-flex alignitems p-0">
                                         <div class="col p-0">
-                                            <select name="light_temple" class="form-control col-11 radius0"
-                                                id="select-3" disabled>
+                                            <select name="light_temple" class="form-control col-11 radius0" id="select-3" disabled>
                                                 <option selected>選擇廟宇</option>
                                             </select>
                                         </div>
@@ -1307,21 +1254,18 @@
                         <!--  祈福者卡(none) input集合 桌機用-->
                         <div class="light_Fill_in_theinformation_inputset borderbottom displayno_md">
                             <!--  祈福者卡(none) input_1_姓名-->
-                            <div
-                                class="light_Fill_in_theinformation_input_1 d-flex alignitems col-lg-8 marginauto paddingbottom40">
+                            <div class="light_Fill_in_theinformation_input_1 d-flex alignitems col-lg-8 marginauto paddingbottom40">
                                 <!-- 祈福者卡(none) *姓名 -->
                                 <div class="light_Fill_in_theinformation_input_text col d-flex">
                                     <p class="redcolorh5">*</p>
                                     <p>姓名</p>
                                 </div>
                                 <!-- 祈福者卡(none) boostarp input -->
-                                <input type="text" class="form-control col-8 radius0" placeholder="請輸入姓名"
-                                    aria-label="請輸入姓名" aria-describedby="addon-wrapping">
+                                <input type="text" class="form-control col-8 radius0" placeholder="請輸入姓名" aria-label="請輸入姓名" aria-describedby="addon-wrapping">
                             </div>
 
                             <!--  祈福者卡(none) input_1_生日-->
-                            <div
-                                class="light_Fill_in_theinformation_input_1 d-flex alignitems col-lg-8 marginauto paddingbottom40">
+                            <div class="light_Fill_in_theinformation_input_1 d-flex alignitems col-lg-8 marginauto paddingbottom40">
                                 <!-- 祈福者卡(none) *出生日期 -->
                                 <div class="light_Fill_in_theinformation_input_text col-4 padright0 d-flex alignitems">
                                     <p class="redcolorh5">*</p>
@@ -1361,8 +1305,7 @@
 
 
                             <!--  祈福者卡(none) input_1_時辰-->
-                            <div
-                                class="light_Fill_in_theinformation_input_1 d-flex alignitems col-lg-8 marginauto paddingbottom40">
+                            <div class="light_Fill_in_theinformation_input_1 d-flex alignitems col-lg-8 marginauto paddingbottom40">
                                 <!-- 祈福者卡(none) *時辰 -->
                                 <div class="light_Fill_in_theinformation_input_text col-4 padright0 d-flex alignitems">
                                     <p class="redcolorh5 opac">*</p>
@@ -1381,8 +1324,7 @@
 
 
                             <!--  祈福者卡(none) input_1_性別-->
-                            <div
-                                class="light_Fill_in_theinformation_input_1 d-flex alignitems col-lg-8 marginauto paddingbottom40">
+                            <div class="light_Fill_in_theinformation_input_1 d-flex alignitems col-lg-8 marginauto paddingbottom40">
                                 <!-- 祈福者卡(none) *性別 -->
                                 <div class="light_Fill_in_theinformation_input_text col-4 d-flex">
                                     <p class="redcolorh5">*</p>
@@ -1391,15 +1333,13 @@
                                 <!-- 祈福者卡(none) boostarp check 改造-->
                                 <div class="light_Fill_in_theinformation_check d-flex">
                                     <div class="check d-flex alignitems padright40">
-                                        <input class="check_input radius0" type="radio" name="exampleRadios"
-                                            id="exampleRadios1" value="option1" checked>
+                                        <input class="check_input radius0" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
                                         <p class="form-check-label" for="exampleRadios1">
                                             男
                                         </p>
                                     </div>
                                     <div class="check d-flex alignitems">
-                                        <input class="check_input radius0" type="radio" name="exampleRadios"
-                                            id="exampleRadios2" value="option2">
+                                        <input class="check_input radius0" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
                                         <p class="form-check-label" for="exampleRadios2">
                                             女
                                         </p>
@@ -1411,49 +1351,41 @@
 
 
                             <!--  祈福者卡(none) input_1_電話-->
-                            <div
-                                class="light_Fill_in_theinformation_input_1 d-flex alignitems col-lg-8 marginauto paddingbottom40">
+                            <div class="light_Fill_in_theinformation_input_1 d-flex alignitems col-lg-8 marginauto paddingbottom40">
                                 <!--祈福者卡(none)  *連絡電話 -->
                                 <div class="light_Fill_in_theinformation_input_text col d-flex">
                                     <p class="redcolorh5 opac">*</p>
                                     <p>連絡電話</p>
                                 </div>
                                 <!-- boostarp input -->
-                                <input type="text" class="form-control col-8 radius0" placeholder="請輸入連絡電話"
-                                    aria-label="請輸入連絡電話" aria-describedby="addon-wrapping">
+                                <input type="text" class="form-control col-8 radius0" placeholder="請輸入連絡電話" aria-label="請輸入連絡電話" aria-describedby="addon-wrapping">
                             </div>
 
                             <!--  祈福者卡(none) input_1_地址-->
-                            <div
-                                class="light_Fill_in_theinformation_input_1 d-flex alignitems col-lg-8 marginauto paddingbottom40">
+                            <div class="light_Fill_in_theinformation_input_1 d-flex alignitems col-lg-8 marginauto paddingbottom40">
                                 <!-- 祈福者卡(none) *地址 -->
                                 <div class="light_Fill_in_theinformation_input_text col d-flex">
                                     <p class="redcolorh5">*</p>
                                     <p>地址</p>
                                 </div>
                                 <!-- 祈福者卡(none) boostarp input -->
-                                <input type="text" class="form-control col-8 radius0" placeholder="請輸入地址"
-                                    aria-label="請輸入地址" aria-describedby="addon-wrapping">
+                                <input type="text" class="form-control col-8 radius0" placeholder="請輸入地址" aria-label="請輸入地址" aria-describedby="addon-wrapping">
                             </div>
 
                             <!-- 祈福者卡(none) 改 -->
                             <div class="light_add_set lightadd_this" id="">
-                                <div class="light_Fill_in_theinformation_input_set d-flex col-8 paddingbottom40 marginauto"
-                                    data-selector="myselector">
+                                <div class="light_Fill_in_theinformation_input_set d-flex col-8 paddingbottom40 marginauto" data-selector="myselector">
                                     <!--  input_1_選擇燈種 -->
-                                    <div
-                                        class="light_Fill_in_theinformation_input_1 d-flex alignitems col-7 marginauto p-0 ">
+                                    <div class="light_Fill_in_theinformation_input_1 d-flex alignitems col-7 marginauto p-0 ">
                                         <!-- *燈種 -->
-                                        <div
-                                            class="light_Fill_in_theinformation_input_text col-7 padright0 d-flex alignitems">
+                                        <div class="light_Fill_in_theinformation_input_text col-7 padright0 d-flex alignitems">
                                             <p class="redcolorh5">*</p>
                                             <p>選擇燈種</p>
                                         </div>
                                         <!-- boostarp 下拉選單 -->
                                         <div class="col-4 d-flex alignitems p-0">
                                             <div class="col p-0">
-                                                <select name="light_type" class="form-control col-11 radius0 lightarray"
-                                                    id="select-1">
+                                                <select name="light_type" class="form-control col-11 radius0 lightarray" id="select-1">
                                                     <option selected>選擇燈種</option>
                                                     <option>光明燈</option>
                                                     <option>文昌燈</option>
@@ -1468,27 +1400,23 @@
                                     </div>
 
                                     <!--  input_1_ 選擇廟宇-->
-                                    <div
-                                        class="light_Fill_in_theinformation_input_1 d-flex alignitems col-lg-8 marginauto p-0 flex-wrap">
+                                    <div class="light_Fill_in_theinformation_input_1 d-flex alignitems col-lg-8 marginauto p-0 flex-wrap">
                                         <!-- *廟宇 -->
-                                        <div
-                                            class="light_Fill_in_theinformation_input_text col-4 padright0 d-flex alignitems">
+                                        <div class="light_Fill_in_theinformation_input_text col-4 padright0 d-flex alignitems">
                                             <p class="redcolorh5">*</p>
                                             <p>選擇廟宇</p>
                                         </div>
                                         <!-- boostarp 下拉選單 -->
                                         <div class="col-3 d-flex alignitems p-0">
                                             <div class="col p-0">
-                                                <select name="light_area" class="form-control col-11 radius0 areaarray"
-                                                    id="select-2" disabled>
+                                                <select name="light_area" class="form-control col-11 radius0 areaarray" id="select-2" disabled>
                                                     <option selected>選擇地區</option>
                                                 </select>
                                             </div>
                                         </div>
                                         <div class="col-5 d-flex alignitems p-0">
                                             <div class="col p-0">
-                                                <select name="light_temple" class="form-control col-11 radius0"
-                                                    id="select-3" disabled>
+                                                <select name="light_temple" class="form-control col-11 radius0" id="select-3" disabled>
                                                     <option selected>選擇廟宇</option>
                                                 </select>
                                             </div>
@@ -1531,7 +1459,7 @@
                             <!-- 手機用 預設祈福者(none)  小提示 同會員資料 -->
                             <div class="light_Fill_in_theinformation_text_star_right    alignitems d-flex">
                                 <input type="checkbox" id="exampleCheck1" class="radius0">
-                                <label class="form-check-label padleft10" for="exampleCheck2">
+                                <label class="form-check-label padleft10" for="exampleCheck1">
                                     <p>同會員資料</p>
                                 </label>
                             </div>
@@ -1550,21 +1478,18 @@
                         <!--  手機用 預設祈福者(none) input集合 -->
                         <div class="light_Fill_in_theinformation_inputset borderbottom  displayno">
                             <!--  手機用 預設祈福者(none) input_1_姓名-->
-                            <div
-                                class="light_Fill_in_theinformation_input_1 d-flex alignitems col-lg-8 marginauto paddingbottom40">
+                            <div class="light_Fill_in_theinformation_input_1 d-flex alignitems col-lg-8 marginauto paddingbottom40">
                                 <!--手機用 *姓名 -->
                                 <div class="light_Fill_in_theinformation_input_text col d-flex">
                                     <p class="redcolorh5">*</p>
                                     <p>姓名</p>
                                 </div>
                                 <!--手機用 boostarp input -->
-                                <input type="text" class="form-control col-7 radius0" placeholder="請輸入姓名"
-                                    aria-label="請輸入姓名" aria-describedby="addon-wrapping">
+                                <input type="text" class="form-control col-7 radius0" placeholder="請輸入姓名" aria-label="請輸入姓名" aria-describedby="addon-wrapping">
                             </div>
 
                             <!--  手機用 預設祈福者(none) input_1_生日-->
-                            <div
-                                class="light_Fill_in_theinformation_input_1 d-flex alignitems col-lg-8 marginauto paddingbottom40">
+                            <div class="light_Fill_in_theinformation_input_1 d-flex alignitems col-lg-8 marginauto paddingbottom40">
                                 <!-- 手機用(none)*出生日期 -->
                                 <div class="light_Fill_in_theinformation_input_text col  d-flex alignitems">
                                     <p class="redcolorh5">*</p>
@@ -1591,8 +1516,7 @@
 
                             </div>
 
-                            <div
-                                class="light_Fill_in_theinformation_input_1 d-flex alignitems col-lg-8 marginauto paddingbottom40">
+                            <div class="light_Fill_in_theinformation_input_1 d-flex alignitems col-lg-8 marginauto paddingbottom40">
                                 <!-- 手機用(none)*出生日期 -->
                                 <div class="light_Fill_in_theinformation_input_text col  d-flex alignitems visy">
                                     <p class="redcolorh5">*</p>
@@ -1621,8 +1545,7 @@
                             </div>
 
                             <!--  手機用 預設祈福者(none) input_1_時辰-->
-                            <div
-                                class="light_Fill_in_theinformation_input_1 d-flex alignitems col-lg-8 marginauto paddingbottom40">
+                            <div class="light_Fill_in_theinformation_input_1 d-flex alignitems col-lg-8 marginauto paddingbottom40">
                                 <!--手機用 (none)*時辰 -->
                                 <div class="light_Fill_in_theinformation_input_text col  d-flex alignitems">
                                     <p class="redcolorh5 opac">*</p>
@@ -1641,8 +1564,7 @@
 
 
                             <!--  手機用 預設祈福者(none) input_1_性別-->
-                            <div
-                                class="light_Fill_in_theinformation_input_1 d-flex alignitems col-lg-8 marginauto paddingbottom40">
+                            <div class="light_Fill_in_theinformation_input_1 d-flex alignitems col-lg-8 marginauto paddingbottom40">
                                 <!--手機用 *性別 -->
                                 <div class="light_Fill_in_theinformation_input_text col-5 d-flex">
                                     <p class="redcolorh5">*</p>
@@ -1651,15 +1573,13 @@
                                 <!-- 手機用 預設祈福者(none) boostarp check 改造-->
                                 <div class="light_Fill_in_theinformation_check d-flex">
                                     <div class="check d-flex alignitems padright40">
-                                        <input class="check_input radius0" type="radio" name="exampleRadios"
-                                            id="exampleRadios1" value="option1" checked>
+                                        <input class="check_input radius0" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
                                         <p class="form-check-label" for="exampleRadios1">
                                             男
                                         </p>
                                     </div>
                                     <div class="check d-flex alignitems">
-                                        <input class="check_input radius0" type="radio" name="exampleRadios"
-                                            id="exampleRadios2" value="option2">
+                                        <input class="check_input radius0" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
                                         <p class="form-check-label" for="exampleRadios2">
                                             女
                                         </p>
@@ -1668,38 +1588,32 @@
                             </div>
 
                             <!--  手機用 預設祈福者(none) input_1_電話-->
-                            <div
-                                class="light_Fill_in_theinformation_input_1 d-flex alignitems col-lg-8 marginauto paddingbottom40">
+                            <div class="light_Fill_in_theinformation_input_1 d-flex alignitems col-lg-8 marginauto paddingbottom40">
                                 <!-- 手機用(none) *連絡電話 -->
                                 <div class="light_Fill_in_theinformation_input_text col d-flex">
                                     <p class="redcolorh5 opac">*</p>
                                     <p>連絡電話</p>
                                 </div>
                                 <!-- 手機用 預設祈福者(none) boostarp input -->
-                                <input type="text" class="form-control col-7 radius0" placeholder="請輸入連絡電話"
-                                    aria-label="請輸入連絡電話" aria-describedby="addon-wrapping">
+                                <input type="text" class="form-control col-7 radius0" placeholder="請輸入連絡電話" aria-label="請輸入連絡電話" aria-describedby="addon-wrapping">
                             </div>
 
                             <!--  手機用 預設祈福者(none) input_1_地址-->
-                            <div
-                                class="light_Fill_in_theinformation_input_1 d-flex alignitems col-lg-8 marginauto paddingbottom40">
+                            <div class="light_Fill_in_theinformation_input_1 d-flex alignitems col-lg-8 marginauto paddingbottom40">
                                 <!-- 手機用(none) *地址 -->
                                 <div class="light_Fill_in_theinformation_input_text col d-flex">
                                     <p class="redcolorh5">*</p>
                                     <p>地址</p>
                                 </div>
                                 <!-- 手機用 預設祈福者(none) boostarp input -->
-                                <input type="text" class="form-control col-7 radius0" placeholder="請輸入地址"
-                                    aria-label="請輸入地址" aria-describedby="addon-wrapping">
+                                <input type="text" class="form-control col-7 radius0" placeholder="請輸入地址" aria-label="請輸入地址" aria-describedby="addon-wrapping">
                             </div>
 
                             <!-- 改 手機用(none) 燈種+廟宇套裝-->
                             <div class="light_add_set_md lightadd_this_md">
-                                <div class="light_Fill_in_theinformation_input_set  col marginauto lightcard"
-                                    data-selector="myselector">
+                                <div class="light_Fill_in_theinformation_input_set  col marginauto lightcard" data-selector="myselector">
                                     <!--  手機用 預設祈福者(none) input_1_選擇燈種 -->
-                                    <div
-                                        class="light_Fill_in_theinformation_input_1 d-flex alignitems col marginauto paddingbottom40 ">
+                                    <div class="light_Fill_in_theinformation_input_1 d-flex alignitems col marginauto paddingbottom40 ">
                                         <!-- 手機用(none) *燈種 -->
                                         <div class="light_Fill_in_theinformation_input_text col  d-flex alignitems">
                                             <p class="redcolorh5">*</p>
@@ -1709,8 +1623,7 @@
                                         <div class="col-7 d-flex alignitems p-0">
 
                                             <div class="col p-0">
-                                                <select name="light_type" class="form-control col-11 radius0 lightarray"
-                                                    id="select-1">
+                                                <select name="light_type" class="form-control col-11 radius0 lightarray" id="select-1">
                                                     <option selected>選擇燈種</option>
                                                     <option>光明燈</option>
                                                     <option>文昌燈</option>
@@ -1725,8 +1638,7 @@
                                     </div>
 
                                     <!--  手機用 預設祈福者(none) input_1_ 選擇廟宇-->
-                                    <div
-                                        class="light_Fill_in_theinformation_input_1 d-flex alignitems col marginauto paddingbottom40">
+                                    <div class="light_Fill_in_theinformation_input_1 d-flex alignitems col marginauto paddingbottom40">
                                         <!--手機用(none) *廟宇_地區 -->
                                         <div class="light_Fill_in_theinformation_input_text col  d-flex alignitems">
                                             <p class="redcolorh5">*</p>
@@ -1735,27 +1647,23 @@
                                         <!-- 手機用 預設祈福者(none) boostarp 下拉選單 廟宇_地區 資料匯入-->
                                         <div class="col-7 d-flex alignitems p-0">
                                             <div class="col p-0">
-                                                <select name="light_area" class="form-control col-11 radius0 areaarray"
-                                                    id="select-2" disabled>
+                                                <select name="light_area" class="form-control col-11 radius0 areaarray" id="select-2" disabled>
                                                     <option selected>選擇地區</option>
                                                 </select>
                                             </div>
                                         </div>
                                     </div>
 
-                                    <div
-                                        class="light_Fill_in_theinformation_input_1 d-flex alignitems col marginauto paddingbottom40">
+                                    <div class="light_Fill_in_theinformation_input_1 d-flex alignitems col marginauto paddingbottom40">
                                         <!--手機用(none) *廟宇 -->
-                                        <div
-                                            class="light_Fill_in_theinformation_input_text col  d-flex alignitems visy">
+                                        <div class="light_Fill_in_theinformation_input_text col  d-flex alignitems visy">
                                             <p class="redcolorh5">*</p>
                                             <p>選擇廟宇</p>
                                         </div>
                                         <!-- 手機用 預設祈福者(none) boostarp 下拉選單 廟宇_宮廟 資料匯入-->
                                         <div class="col-7 d-flex alignitems p-0">
                                             <div class="col p-0">
-                                                <select name="light_temple" class="form-control col-11 radius0"
-                                                    id="select-3" disabled>
+                                                <select name="light_temple" class="form-control col-11 radius0" id="select-3" disabled>
                                                     <option selected>選擇廟宇</option>
                                                 </select>
                                             </div>
@@ -1782,8 +1690,7 @@
 
 
             <!-- 桌機用 底部_按鈕 -->
-            <div
-                class="light_Fill_in_theinformation_button buttonstyle padddingtop40 padddingbottom150 butflexmargin  displayno_md">
+            <div class="light_Fill_in_theinformation_button buttonstyle padddingtop40 padddingbottom150 butflexmargin  displayno_md">
                 <div class="btntest">
                     <button class="butstyle_1 member_add">
                         <p>新增祈福者</p>
@@ -1798,22 +1705,20 @@
 
 
             <!-- 手機用 底部_按鈕 -->
-            <div
-                class="light_Fill_in_theinformation_button buttonstyle padddingtop40 padddingbottom150 butflexmargin displayno  ">
+            <div class="light_Fill_in_theinformation_button buttonstyle padddingtop40 padddingbottom150 butflexmargin displayno  ">
                 <div class="btntest">
                     <button class="butstyle_1 member_add_md">
                         <p>新增祈福者</p>
                     </button>
                 </div>
-                <button class="butstyle_1">
+                <button class="butstyle_1" type="submit">
                     <p>加入購物車</p>
                 </button>
             </div>
         </div>
     </div>
 
-    </div>
-    </div>
+
 
 
     <!-- footer是我~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
@@ -1831,18 +1736,14 @@
     <!-- Js  相關設定~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
     <!-- jquery3.5.1 -->
     <!-- jquery -->
-    <script src="https://code.jquery.com/jquery-3.6.0.js"
-        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <!-- bootstrap4.6.0 -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
-        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="https://unpkg.com/moment-lunar@0.0.4/moment-lunar.min.js"></script>
     <script>
-
         const lunarDate = moment().year(2021).month(2).date(24).lunar().format('YYYY-MM-DD');
         const solarDate = moment().year(2017).month(0).date(1).solar().format('YYYY-MM-DD');
 
@@ -1855,7 +1756,7 @@
     <script>
         // navbar
         // overlayNav進場
-        $('.nav_burgurBar_img').click(function () {
+        $('.nav_burgurBar_img').click(function() {
 
             let navPosition = {
                 transform: 'translateY(0)'
@@ -1865,7 +1766,7 @@
         })
 
         // overlayNav退場
-        $('.nav_closeBtn').click(function () {
+        $('.nav_closeBtn').click(function() {
 
             let navPosition = {
                 transform: 'translateY(-2500px)',
@@ -1877,17 +1778,17 @@
 
 
         //Login hide
-        $('#registerbtn').click(function () {
+        $('#registerbtn').click(function() {
             $('#loginCenter').modal('hide');
         })
 
-        $('#passwordbtn').click(function () {
+        $('#passwordbtn').click(function() {
             $('#loginCenter').modal('hide');
         })
 
         //overlay sub-menu
-        $(document).ready(function () {
-            $('.nav_ser_mobile').click(function () {
+        $(document).ready(function() {
+            $('.nav_ser_mobile').click(function() {
 
                 $('.nav_dropDownMenu_mobile').toggle('slow');
 
@@ -1903,19 +1804,19 @@
 
 
         // 通用 刪除祈福者 on版本
-        $(document).on('click', '.removebut', (function () {
+        $(document).on('click', '.removebut', (function() {
             console.log('click')
             $(this).parentsUntil('.removeset').remove();
         }))
 
         // 桌機 刪除燈種垃圾桶 on版本
-        $(document).on('click', '.removebut_far', (function () {
+        $(document).on('click', '.removebut_far', (function() {
             console.log('click')
             $(this).parentsUntil('.light_add_set').remove();
         }))
 
         // 手機 刪除燈種垃圾桶 on版本
-        $(document).on('click', '.removebut_far_md', (function () {
+        $(document).on('click', '.removebut_far_md', (function() {
             console.log('click')
             $(this).parentsUntil('.light_add_set_md').remove();
         }))
@@ -1941,7 +1842,7 @@
         // })
 
         let nowcard_md = 1;
-        $(document).on('click', '.member_add_md', function () {
+        $(document).on('click', '.member_add_md', function() {
             let newLiiii_md = '<div id="newdata_' + nowcard_md + '">' + addCard_new_md + '</div>';
 
             nowcard_md = nowcard_md + 1;
@@ -1962,7 +1863,7 @@
                             <!-- 手機用 預設祈福者(none)  小提示 同會員資料 -->
                             <div class="light_Fill_in_theinformation_text_star_right    alignitems d-flex">
                                 <input type="checkbox" id="exampleCheck1" class="radius0">
-                                <label class="form-check-label padleft10" for="exampleCheck2">
+                                <label class="form-check-label padleft10" for="exampleCheck1">
                                     <p>同會員資料</p>
                                 </label>
                             </div>
@@ -2217,7 +2118,7 @@
         // 桌機 祈福者增加on版本
 
         let nowcard = 1;
-        $(document).on('click', '.member_add', function () {
+        $(document).on('click', '.member_add', function() {
             // let newLiiii = '<div id="newdata_' + nowcard + '">' + addCard_new + '</div>';
 
             // nowcard = nowcard + 1;
@@ -2433,7 +2334,7 @@
         //     console.log(newLi);
         // })
 
-        $(document).on('click', '.light_add', function () {
+        $(document).on('click', '.light_add', function() {
             // let newLi = '<div id="newlighcard_' + nowItem + '">' + addLight_new + '</div>';
 
             // nowItem = nowItem + 1;
@@ -2502,7 +2403,7 @@
         // 手機 燈種增加 新增Buttom on版本
         // let addLight_md = document.querySelector(".lightadd_this_md").innerHTML;
         let nowItem_md = 1;
-        $(document).on('click', '.light_add_md', function () {
+        $(document).on('click', '.light_add_md', function() {
             // let newLi_md = '<div id="newlighcard_' + nowItem_md + '">' + addLight_new_md + '</div>';
 
             // nowItem_md = nowItem + 1;
@@ -2618,7 +2519,7 @@
         var options = generateOptions();
 
         function bindMySelector(options) {
-            $("[data-selector=myselector] [name=light_type]:not([data-myselector='1'])").attr("data-myselector", "1").change(function () {
+            $("[data-selector=myselector] [name=light_type]:not([data-myselector='1'])").attr("data-myselector", "1").change(function() {
                 console.log("aaa");
                 var light_type = $(this).find("option:selected").text();
                 $(this).parents('[data-selector=myselector]').find('[name=light_area] option+').remove();
@@ -2629,7 +2530,7 @@
                     $(this).parents('[data-selector=myselector]').find('[name=light_area]').removeAttr("disabled").append("<option>" + areas[i] + "</option>");
                 }
             });
-            $("[data-selector=myselector] [name=light_area]:not([data-myselector=1])").attr("data-myselector", "1").change(function () {
+            $("[data-selector=myselector] [name=light_area]:not([data-myselector=1])").attr("data-myselector", "1").change(function() {
                 var light_type = $(this).parents('[data-selector=myselector]').find('[name=light_type] option:selected').text();
                 var light_area = $(this).find("option:selected").text();
                 $(this).parents('[data-selector=myselector]').find('[name=light_temple] option+').remove();
