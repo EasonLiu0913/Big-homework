@@ -1,7 +1,6 @@
 <?php include __DIR__ . '/parts/config.php'; ?>
 
 <?php
-<<<<<<< HEAD
 $sql = "SELECT * FROM f_test o  
 JOIN friend d ON o.sid= d.f_sid
 WHERE o.sid=9 ";
@@ -10,12 +9,6 @@ $stmt = $pdo->prepare($sql);
 $rows = $pdo->query($sql)->fetchAll();
 $stmt->execute();
 $f_test = $stmt->fetch(PDO::FETCH_ASSOC);
-=======
-$sql = "SELECT * FROM testtext WHERE id = '5'";
-$stmt = $pdo->prepare($sql);
-$stmt->execute();
-$testtext = $stmt->fetch(PDO::FETCH_ASSOC);
->>>>>>> e8b88b068eb525975af791ab29e6f0bf0afa431d
 
 
 
@@ -672,21 +665,13 @@ $testtext = $stmt->fetch(PDO::FETCH_ASSOC);
                                 <!--預設祈福者 boostarp 下拉選單 -->
                                 <div class="col-lg-11 displayflex alignitems p-0">
                                     <div class="col-lg-2 p-0">
-<<<<<<< HEAD
                                         <select class="form-control col-11 radius0" id="exampleInputTime_1">
-=======
-                                        <select class="form-control col-11 radius0" id="exampleInputTime">
->>>>>>> e8b88b068eb525975af791ab29e6f0bf0afa431d
                                             <option value="國曆">國曆</option>
                                             <option value="農曆">農曆</option>
                                         </select>
                                     </div>
                                     <div class="col-lg-2 d-flex alignitems p-0 ">
-<<<<<<< HEAD
                                         <select class="form-control col-10 radius0" id="exampleInputTime_2">
-=======
-                                        <select class="form-control col-10 radius0" id="exampleInputTime">
->>>>>>> e8b88b068eb525975af791ab29e6f0bf0afa431d
                                             <option selected>選擇</option>
                                             <option value="2021">2021</option>
                                             <option value="2020">2020</option>
@@ -794,11 +779,7 @@ $testtext = $stmt->fetch(PDO::FETCH_ASSOC);
                                         <p>年</p>
                                     </div>
                                     <div class="col-lg-2 d-flex alignitems p-0">
-<<<<<<< HEAD
                                         <select class="form-control col-8 radius0" id="exampleInputTime_3">
-=======
-                                        <select class="form-control col-8 radius0" id="exampleInputTime">
->>>>>>> e8b88b068eb525975af791ab29e6f0bf0afa431d
                                             <option selected>選擇</option>
                                             <option value="01">1</option>
                                             <option value="02">2</option>
@@ -816,11 +797,7 @@ $testtext = $stmt->fetch(PDO::FETCH_ASSOC);
                                         <p>月</p>
                                     </div>
                                     <div class="col-lg-2 d-flex alignitems p-0 ">
-<<<<<<< HEAD
                                         <select class="form-control col-8 radius0" id="exampleInputTime_4">
-=======
-                                        <select class="form-control col-8 radius0" id="exampleInputTime">
->>>>>>> e8b88b068eb525975af791ab29e6f0bf0afa431d
                                             <option selected>選擇</option>
                                             <option value="01">1</option>
                                             <option value="02">2</option>
@@ -870,11 +847,7 @@ $testtext = $stmt->fetch(PDO::FETCH_ASSOC);
                                 <!--預設祈福者 boostarp 下拉選單 -->
                                 <div class="col-11 d-flex alignitems p-0">
                                     <div class="col-2 p-0">
-<<<<<<< HEAD
                                         <select class="form-control col-11 radius0" id="exampleInputTime_5" required>
-=======
-                                        <select class="form-control col-11 radius0" id="exampleInputTime" required>
->>>>>>> e8b88b068eb525975af791ab29e6f0bf0afa431d
                                             <option selected>吉時</option>
                                             <option value="子">子時 23~01</option>
                                             <option value="丑">丑時 01~03</option>
@@ -1008,17 +981,10 @@ $testtext = $stmt->fetch(PDO::FETCH_ASSOC);
                                     </div>
                                 </div>
                                 <!-- <div class="button_add vishidden ">
-<<<<<<< HEAD
                                     <button class="graycolor">
                                         <p>+ 新增燈種與廟宇</p>
                                     </button>
                                 </div> -->
-=======
-                                <button class="graycolor">
-                                    <p>+ 新增燈種與廟宇</p>
-                                </button>
-                            </div> -->
->>>>>>> e8b88b068eb525975af791ab29e6f0bf0afa431d
                             </div>
                         </div>
 
@@ -1028,7 +994,6 @@ $testtext = $stmt->fetch(PDO::FETCH_ASSOC);
 
 
 
-<<<<<<< HEAD
 
 
 
@@ -1429,11 +1394,6 @@ $testtext = $stmt->fetch(PDO::FETCH_ASSOC);
 
 
 
-=======
-                </div>
-
-
->>>>>>> e8b88b068eb525975af791ab29e6f0bf0afa431d
                 <!-- 桌機用 底部_按鈕 -->
                 <div class="light_Fill_in_theinformation_button buttonstyle padddingtop40 padddingbottom150 butflexmargin  displayno_md">
                     <div class="btntest">
@@ -1539,7 +1499,6 @@ $testtext = $stmt->fetch(PDO::FETCH_ASSOC);
         // 測試 同會員資料匯入輸入
         $(document).on('click', '.form-check-label', (function() {
             console.log('click')
-<<<<<<< HEAD
             $(this).parents('.light_Fill_in_theinformation_text_star').next().next().find('.exampleInputName').val("<?= $f_test['name'] ?>");
 
             $(this).parents('.light_Fill_in_theinformation_text_star').next().next().find('.exampleInputPhoneNumber').val("<?= $f_test['mobile'] ?>");
@@ -1547,20 +1506,10 @@ $testtext = $stmt->fetch(PDO::FETCH_ASSOC);
             $(this).parents('.light_Fill_in_theinformation_text_star').next().next().find('.exampleInputaddress').val("<?= $f_test['address'] ?>");
 
             $(this).parents('.light_Fill_in_theinformation_text_star').next().next().find('.exampleInputemail').val("<?= $f_test['email'] ?>");
-=======
-            $(this).parents('.light_Fill_in_theinformation_text_star').next().next().find('.exampleInputName').val("<?= $testtext['name'] ?>");
-
-            $(this).parents('.light_Fill_in_theinformation_text_star').next().next().find('.exampleInputPhoneNumber').val("<?= $testtext['mobile'] ?>");
-
-            $(this).parents('.light_Fill_in_theinformation_text_star').next().next().find('.exampleInputaddress').val("<?= $testtext['address'] ?>");
-
-            $(this).parents('.light_Fill_in_theinformation_text_star').next().next().find('.exampleInputemail').val("<?= $testtext['email'] ?>");
->>>>>>> e8b88b068eb525975af791ab29e6f0bf0afa431d
 
         }))
 
 
-<<<<<<< HEAD
         // 親友資料匯入
 
         $(document).on('change', "#exampleInputfriend", (function() {
@@ -1587,8 +1536,6 @@ $testtext = $stmt->fetch(PDO::FETCH_ASSOC);
 
 
 
-=======
->>>>>>> e8b88b068eb525975af791ab29e6f0bf0afa431d
 
 
 
